@@ -36,8 +36,8 @@ FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "10"))  # 0 means no expiry
 BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/Anime_Chats_St")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "200"))
 #--------------------------------------------
-START_PIC = os.environ.get("START_PIC", "https://graph.org/file/7fd0b023e49292d657ffd-62b41dad1db226fc77.jpg")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://graph.org/file/eb7c8ae9786956240d9f6-48d8610b8c5263ba0e.jpg")
+START_PIC = os.environ.get("START_PIC", "https://graph.org/file/0c05eef847f933e7fd98a-11ad317429dd933215.jpg")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://graph.org/file/ab895207006b75e02b3a8-db17654a8b642e8a12.jpg")
 
 #--------------------------------------------
 SHORTLINK_URL = os.environ.get("SHORTLINK_URL", "shortxlinks.com")
@@ -45,7 +45,7 @@ SHORTLINK_API = os.environ.get("SHORTLINK_API", "32b97a6d89bf4fbe47e14d4b7674d28
 TUT_VID = os.environ.get("TUT_VID","https://t.me/How_to_download_ST/8")
 SHORT_MSG = "<b>⌯ Here is Your Download Link, Must Watch Tutorial Before Clicking On Download...</b>"
 
-SHORTENER_PIC = os.environ.get("SHORTENER_PIC", "https://telegra.ph/file/ec17880d61180d3312d6a.jpg")
+SHORTENER_PIC = os.environ.get("SHORTENER_PIC", "https://graph.org/file/aa3d79afb2e78f7b05a18-8f7cbff7ce6c527dbe.jpg")
 #--------------------------------------------
 
 #--------------------------------------------
