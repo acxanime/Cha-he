@@ -94,19 +94,19 @@ USER_REPLY_TEXT = "ʙᴀᴋᴋᴀ ! ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴍʏ ꜱᴇɴᴘ
 OWNER_TAG = os.environ.get("OWNER_TAG", "sitaratoons_support")
 UPI_ID = os.environ.get("UPI_ID", "sitaratoons@axl")
 QR_PIC = os.environ.get("QR_PIC", "https://acxanimess.github.io/Pay/")
-SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/{OWNER_TAG}")
+SCREENSHOT_URL = os.environ.get("SCREENSHOT_URL", f"t.me/sitaratoons_support")
 #--------------------------------------------
 #Time and its price
 #7 Days
-PRICE1 = os.environ.get("PRICE1", "0 rs")
+PRICE1 = os.environ.get("PRICE1", "70 rs")
 #1 Month
-PRICE2 = os.environ.get("PRICE2", "60 rs")
+PRICE2 = os.environ.get("PRICE2", "100 rs")
 #3 Month
-PRICE3 = os.environ.get("PRICE3", "150 rs")
+PRICE3 = os.environ.get("PRICE3", "230 rs")
 #6 Month
-PRICE4 = os.environ.get("PRICE4", "280 rs")
+PRICE4 = os.environ.get("PRICE4", "350 rs")
 #1 Year
-PRICE5 = os.environ.get("PRICE5", "550 rs")
+PRICE5 = os.environ.get("PRICE5", "600 rs")
 
 #===================(END)========================#
 
