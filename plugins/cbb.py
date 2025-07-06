@@ -62,17 +62,30 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
 
     elif data == "premium":
-        await query.message.edit_text(
-            text=f"<b><u>ᴘʀᴇᴍɪᴜᴍ ʙᴇɴɪғɪᴛs ᴀɴᴅ ᴘʀɪᴄᴇs</u> \n\n● ᴅɪʀᴇᴄᴛ ᴄʜᴀɴɴᴇʟ ʟɪɴᴋs\n● ɴᴏ ᴀᴅ ʟɪɴᴋs\n\n● 7 ᴅᴀʏs - ɪɴʀ {PRICE1}\n\n● 1 ᴍᴏɴᴛʜ - ɪɴʀ {PRICE2}\n\n● 3 ᴍᴏɴᴛʜ - ɪɴʀ {PRICE3}\n\n● 6 ᴍᴏɴᴛʜ - ɪɴʀ {PRICE4}\n\n● 12 ᴍᴏɴᴛʜs - ɪɴʀ {PRICE5} \n\n\n💵 UPI ID -  <code>{UPI_ID}</code>\n\n\n📸 QR - ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ꜱᴄᴀɴ ({UPI_IMAGE_URL})\n\n♻️ If payment is not getting sent on above given QR code then inform admin, he will give you new QR code\n\n\n‼️ Must Send Screenshot after payment\n\nғᴏʀ ᴘᴀʏᴍᴇɴᴛ ᴅᴍ @AcxAnime | @sitaratoons_support</b>",
-            disable_web_page_preview=True,
-            reply_markup = InlineKeyboardMarkup(
-                [   
+        await query.message.delete()
+        await client.send_photo(
+            chat_id=query.message.chat.id,
+            photo=QR_PIC,
+            caption=(
+                f"👋 {query.from_user.username}\n\n"
+                f"🎖️ Available Plans :\n\n"
+                f"● {PRICE1}  For 0 Days Prime Membership\n\n"
+                f"● {PRICE2}  For 1 Month Prime Membership\n\n"
+                f"● {PRICE3}  For 3 Months Prime Membership\n\n"
+                f"● {PRICE4}  For 6 Months Prime Membership\n\n"
+                f"● {PRICE5}  For 1 Year Prime Membership\n\n\n"
+                f"💵 ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n\n"
+                f"♻️ After Payment You Will Get Instant Membership \n\n\n"
+                f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
+            ),
+            reply_markup=InlineKeyboardMarkup(
+                [
                     [
-                        InlineKeyboardButton("Send Payment Screenshot(ADMIN) 📸", url=(SCREENSHOT_URL))
+                        InlineKeyboardButton(
+                            "ADMIN 24/7", url=(SCREENSHOT_URL)
+                        )
                     ],
-                    [
-                        InlineKeyboardButton("🔒 Close", callback_data = "close")
-                    ]
+                    [InlineKeyboardButton("🔒 Close", callback_data="close")],
                 ]
             )
         )
