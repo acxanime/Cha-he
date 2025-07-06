@@ -62,9 +62,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 
 
     elif data == "premium":
-        await query.message.delete()
-        await client.send_photo(
-            chat_id=query.message.chat.id,
+        await query.message.delete(),
             photo=QR_PIC,
             caption=(
                 f"👋 {query.from_user.username}\n\n"
