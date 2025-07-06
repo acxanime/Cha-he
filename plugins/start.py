@@ -45,7 +45,7 @@ async def short_url(client: Client, message: Message, base64_string):
                 InlineKeyboardButton(text="•ᴛᴜᴛᴏʀɪᴀʟ•", url=TUT_VID)
             ],
             [
-                InlineKeyboardButton('•ᴘʀᴇᴍɪᴜᴍ•', url='https://t.me/Primiumprice/2")
+                InlineKeyboardButton('•ᴘʀᴇᴍɪᴜᴍ•', url='https://t.me/Primiumprice/2')
             ]
         ]
 
