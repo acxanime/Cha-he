@@ -19,25 +19,25 @@ from logging.handlers import RotatingFileHandler
 #--------------------------------------------
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "8154426339")
-APP_ID = int(os.environ.get("APP_ID", "")) #Your API ID from my.telegram.org
-API_HASH = os.environ.get("API_HASH", "") #Your API Hash from my.telegram.org
+APP_ID = int(os.environ.get("APP_ID", "18946488")) #Your API ID from my.telegram.org
+API_HASH = os.environ.get("API_HASH", "c163d4e28e63196c3806cf3b9b2885de") #Your API Hash from my.telegram.org
 #--------------------------------------------
 
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002170811388")) #Your db channel Id
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002516423394")) #Your db channel Id
 OWNER = os.environ.get("OWNER", "sewxiy") # Owner username without @
-OWNER_ID = int(os.environ.get("OWNER_ID", "7328629001")) # Owner id
+OWNER_ID = int(os.environ.get("OWNER_ID", "6692613520")) # Owner id
 #--------------------------------------------
-PORT = os.environ.get("PORT", "8001")
+PORT = os.environ.get("PORT", "8080")
 #--------------------------------------------
-DB_URI = os.environ.get("DATABASE_URL", "")
-DB_NAME = os.environ.get("DATABASE_NAME", "Cluooo")
+DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://stoons:stoons@ajay.v5uug.mongodb.net/?retryWrites=true&w=majority")
+DB_NAME = os.environ.get("DATABASE_NAME", "Ajay")
 #--------------------------------------------
-FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "10"))  # 0 means no expiry
-BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/CodeflixSupport")
+FSUB_LINK_EXPIRY = int(os.getenv("FSUB_LINK_EXPIRY", "600"))  # 0 means no expiry
+BAN_SUPPORT = os.environ.get("BAN_SUPPORT", "https://t.me/Anime_Chats_St")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "200"))
 #--------------------------------------------
-START_PIC = os.environ.get("START_PIC", "https://telegra.ph/file/ec17880d61180d3312d6a.jpg")
-FORCE_PIC = os.environ.get("FORCE_PIC", "https://telegra.ph/file/e292b12890b8b4b9dcbd1.jpg")
+START_PIC = os.environ.get("START_PIC", "https://graph.org/file/9eff9023429a2bf643574-add775ea5ee45e9d24.jpg")
+FORCE_PIC = os.environ.get("FORCE_PIC", "https://graph.org/file/eb7c8ae9786956240d9f6-48d8610b8c5263ba0e.jpg")
 #--------------------------------------------
 
 #--------------------------------------------
@@ -45,7 +45,7 @@ HELP_TXT = "<b><blockquote>ᴛʜɪs ɪs ᴀɴ ғɪʟᴇ ᴛᴏ ʟɪɴᴋ ʙᴏ�
 ABOUT_TXT = "<b><blockquote>◈ ᴄʀᴇᴀᴛᴏʀ: <a href=https://t.me/cosmic_freak>Yato</a>\n◈ ꜰᴏᴜɴᴅᴇʀ ᴏꜰ : <a href=https://t.me/otakuflix_network>ᴏᴛᴀᴋᴜғʟɪx ɴᴇᴛᴡᴏʀᴋ</a>\n◈ ᴀɴɪᴍᴇ ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/anime_cruise_netflix>ᴀɴɪᴍᴇ ᴄʀᴜɪsᴇ</a>\n◈ sᴇʀɪᴇs ᴄʜᴀɴɴᴇʟ : <a href=https://t.me/webseries_flix>ᴡᴇʙsᴇʀɪᴇs ғʟɪx</a>\n◈ ᴀᴅᴜʟᴛ ᴍᴀɴʜᴡᴀ : <a href=https://t.me/pornhwa_flix>ᴘᴏʀɴʜᴡᴀs</a>\n◈ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/cosmic_freak>subaru</a></blockquote></b>"
 #--------------------------------------------
 #--------------------------------------------
-START_MSG = os.environ.get("START_MESSAGE", "<b>ʜᴇʟʟᴏ {first}\n\n<blockquote> ɪ ᴀᴍ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ, ɪ ᴄᴀɴ sᴛᴏʀᴇ ᴘʀɪᴠᴀᴛᴇ ғɪʟᴇs ɪɴ sᴘᴇᴄɪғɪᴇᴅ ᴄʜᴀɴɴᴇʟ ᴀɴᴅ ᴏᴛʜᴇʀ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ɪᴛ ғʀᴏᴍ sᴘᴇᴄɪᴀʟ ʟɪɴᴋ.</blockquote></b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Hᴇʟʟᴏ 💕 {mention} \n\n ɪ Aᴍ Fɪʟᴇ Sᴛᴏʀᴇ Bᴏᴛ, ɪ Cᴀɴ Sᴛᴏʀᴇ Pʀɪᴠᴀᴛᴇ Fɪʟᴇs Iɴ Sᴘᴇᴄɪғɪᴇᴅ Cʜᴀɴɴᴇʟ Aɴᴅ Oᴛʜᴇʀ Usᴇʀs Cᴀɴ Aᴄᴄᴇss Iᴛ Fʀᴏᴍ Sᴘᴇᴄɪᴀʟ Lɪɴᴋ.\n\nCʜᴇᴄᴋ Oᴜᴛ Oᴜʀ Cʜᴀɴɴᴇʟꜱ Bᴇʟᴏᴡ Gᴏʀ Mᴏʀᴇ!👇</b>")
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "ʜᴇʟʟᴏ {first}\n\n<b>ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ᴀɴᴅ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ʀᴇʟᴏᴀᴅ button ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ʀᴇǫᴜᴇꜱᴛᴇᴅ ꜰɪʟᴇ.</b>")
 
 CMD_TXT = """<blockquote><b>» ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs:</b></blockquote>
