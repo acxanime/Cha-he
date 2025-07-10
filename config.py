@@ -15,6 +15,8 @@ from os import environ,getenv
 import logging
 from logging.handlers import RotatingFileHandler
 
+File path: config.py
+
 #rohit_1888 on Tg
 #--------------------------------------------
 #Bot token @Botfather
