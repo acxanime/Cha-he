@@ -1,21 +1,12 @@
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-
-from pyrogram import Client 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from bot import Bot
 from config import *
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from database.database import *
 
 @Bot.on_callback_query()
 async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
+    user = query.from_user.username or query.from_user.first_name
 
     if data == "help":
         await query.message.edit_text(
@@ -43,59 +34,40 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("ʜᴇʟᴘ", callback_data='help'),
-                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')]
+                 InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data='about')],
+                [InlineKeyboardButton("💎 Buy Premium", callback_data='premium')]
             ])
         )
 
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
-        elif data == "premium":
+    elif data == "premium":
         await query.message.delete()
         await client.send_photo(
             chat_id=query.message.chat.id,
             photo=QR_PIC,
             caption=(
-                f"👋 {query.from_user.username or query.from_user.first_name}\n\n"
-                f"🎖️ Available Plans :\n\n"
-                f"● {PRICE1}  For 7 Days Prime Membership\n\n"
-                f"● {PRICE2}  For 1 Month Prime Membership\n\n"
-                f"● {PRICE3}  For 3 Months Prime Membership\n\n"
-                f"● {PRICE4}  For 6 Months Prime Membership\n\n"
-                f"● {PRICE5}  For 1 Year Prime Membership\n\n\n"
-                f"💵 ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n\n"
-                f"♻️ After Payment You Will Get Instant Membership \n\n\n"
-                f"‼️ Must Send Screenshot after payment & If anyone want custom time membership then ask admin"
+                f"👋 {user}\n\n"
+                f"🎖️ Available Plans:\n\n"
+                f"💠 {PRICE1} – Trial (0 Days)\n"
+                f"💠 {PRICE2} – 1 Month\n"
+                f"💠 {PRICE3} – 3 Months\n"
+                f"💠 {PRICE4} – 6 Months\n"
+                f"💠 {PRICE5} – 1 Year\n\n"
+                f"💵 Pay to: <code>{UPI_ID}</code>\n"
+                f"📸 Send payment screenshot to admin.\n"
+                f"⚡ Instant activation after verification."
             ),
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "ADMIN 24/7", url=(SCREENSHOT_URL)
-                        )
-                    ],
-                    [InlineKeyboardButton("🔒 Close", callback_data="close")],
-                ]
-            )
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("📩 Contact Admin", url=SCREENSHOT_URL)],
+                [InlineKeyboardButton("🔒 Close", callback_data="close")]
+            ])
         )
 
     elif data == "close":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
-        except:
-            pass
+        except Exception as e:
+            print(f"[WARN] Could not delete original message: {e}")
 
     elif data.startswith("rfs_ch_"):
         cid = int(data.split("_")[2])
@@ -112,8 +84,9 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 f"Channel: {chat.title}\nCurrent Force-Sub Mode: {status}",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
-        except Exception:
+        except Exception as e:
             await query.answer("Failed to fetch channel info", show_alert=True)
+            print(f"[ERROR] Channel fetch failed: {e}")
 
     elif data.startswith("rfs_toggle_"):
         cid, action = data.split("_")[2:]
@@ -123,7 +96,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         await db.set_channel_mode(cid, mode)
         await query.answer(f"Force-Sub set to {'ON' if mode == 'on' else 'OFF'}")
 
-        # Refresh the same channel's mode view
         chat = await client.get_chat(cid)
         status = "🟢 ON" if mode == "on" else "🔴 OFF"
         new_mode = "off" if mode == "on" else "on"
@@ -152,16 +124,3 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             "sᴇʟᴇᴄᴛ ᴀ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴛᴏɢɢʟᴇ ɪᴛs ғᴏʀᴄᴇ-sᴜʙ ᴍᴏᴅᴇ:",
             reply_markup=InlineKeyboardMarkup(buttons)
         )
-
-
-# Don't Remove Credit @CodeFlix_Bots, @rohit_1888
-# Ask Doubt on telegram @CodeflixSupport
-#
-# Copyright (C) 2025 by Codeflix-Bots@Github, < https://github.com/Codeflix-Bots >.
-#
-# This file is part of < https://github.com/Codeflix-Bots/FileStore > project,
-# and is released under the MIT License.
-# Please see < https://github.com/Codeflix-Bots/FileStore/blob/master/LICENSE >
-#
-# All rights reserved.
-#
