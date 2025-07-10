@@ -61,7 +61,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
 #
 
 
-    elif data == "premium":
+        elif data == "premium":  # ✅ Ye sahi jagah hona chahiye
         await query.message.delete()
         await client.send_photo(
             chat_id=query.message.chat.id,
@@ -69,25 +69,18 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             caption=(
                 f"👋 {query.from_user.username or query.from_user.first_name}\n\n"
                 f"🎖️ Available Plans :\n\n"
-                f"● {PRICE1}  For 0 Days Prime Membership\n\n"
-                f"● {PRICE2}  For 1 Month Prime Membership\n\n"
-                f"● {PRICE3}  For 3 Months Prime Membership\n\n"
-                f"● {PRICE4}  For 6 Months Prime Membership\n\n"
-                f"● {PRICE5}  For 1 Year Prime Membership\n\n\n"
-                f"💵 ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n\n"
-                f"♻️ After Payment You Will Get Instant Membership \n\n\n"
-                f"‼️ Must Send Screenshot after payment & If anyone want custom time membership then ask admin"
+                f"● {PRICE1} – 7 Days\n"
+                f"● {PRICE2} – 1 Month\n"
+                f"● {PRICE3} – 3 Months\n"
+                f"● {PRICE4} – 6 Months\n"
+                f"● {PRICE5} – 1 Year\n\n"
+                f"💵 Pay UPI to: <code>{UPI_ID}</code>\n"
+                f"📸 Send Screenshot to Admin\n"
             ),
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            "ADMIN 24/7", url=(SCREENSHOT_URL)
-                        )
-                    ],
-                    [InlineKeyboardButton("🔒 Close", callback_data="close")],
-                ]
-            )
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("📩 Contact Admin", url=SCREENSHOT_URL)],
+                [InlineKeyboardButton("🔒 Close", callback_data="close")]
+            ])
         )
 
 
