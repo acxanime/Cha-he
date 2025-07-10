@@ -67,7 +67,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             chat_id=query.message.chat.id,
             photo=QR_PIC,
             caption=(
-                f"👋 {query.from_user.username}\n\n"
+                f"👋 {query.from_user.username or query.from_user.first_name}\n\n"
                 f"🎖️ Available Plans :\n\n"
                 f"● {PRICE1}  For 0 Days Prime Membership\n\n"
                 f"● {PRICE2}  For 1 Month Prime Membership\n\n"
@@ -76,7 +76,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 f"● {PRICE5}  For 1 Year Prime Membership\n\n\n"
                 f"💵 ASK UPI ID TO ADMIN AND PAY THERE -  <code>{UPI_ID}</code>\n\n\n"
                 f"♻️ After Payment You Will Get Instant Membership \n\n\n"
-                f"‼️ Must Send Screenshot after payment & If anyone want custom time membrship then ask admin"
+                f"‼️ Must Send Screenshot after payment & If anyone want custom time membership then ask admin"
             ),
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -89,7 +89,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 ]
             )
         )
-
 
 
     elif data == "close":
